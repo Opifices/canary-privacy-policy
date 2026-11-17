@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canary — Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Canary, an Atlassian Forge application for testing Jira Automation behavior.">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --primary: #0052cc;
+      --primary-hover: #0747a6;
+      --accent: #eef2ff;
+      --accent-border: #c7d2fe;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+      border: 1px solid var(--border);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e40af;
+      background: var(--accent);
+      border: 1px solid var(--accent-border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #091e42;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .last-updated {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #172b4d;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 0.85rem;
+      color: #334155;
+    }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-box {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+      border-left: 4px solid var(--primary);
+    }
+
+    .contact-box p {
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-top: 2.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      .container {
+        padding: 1.75rem 1.25rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <span class="badge">Atlassian Forge Application</span>
+      <h1>Canary — Privacy Policy</h1>
+      <p class="last-updated">Last updated: November 17, 2026</p>
+    </header>
+
+    <section>
+      <h2>1. About Canary</h2>
+      <p>Canary is an Atlassian Forge application developed by Carlos Ferreiro to test Jira Automation behavior through controlled test issues.</p>
+      <p>Canary operates within Atlassian Cloud and is intended for use in dedicated test projects.</p>
+    </section>
+
+    <section>
+      <h2>2. Information We Process</h2>
+      <p>To perform its functions, Canary accesses and processes:</p>
+      <ul>
+        <li>Jira project names and identifiers.</li>
+        <li>Test issue identifiers, labels and creation timestamps.</li>
+        <li>Issue change histories, including relevant modification information.</li>
+        <li>User permissions and authentication context required to authorize operations.</li>
+        <li>Test configurations and execution results.</li>
+      </ul>
+      <p>Canary does not require users to provide passwords or payment information.</p>
+    </section>
+
+    <section>
+      <h2>3. Data Storage and Retention</h2>
+      <p>Canary stores up to 50 recent test execution records using Atlassian Forge Key-Value Store (KVS).</p>
+      <p>Records may contain project identifiers, issue keys, configured labels, timestamps and execution metadata.</p>
+      <p>Authorized users can view records associated with projects they can access. Users with project administration permissions can clear the corresponding execution history.</p>
+      <p>Stored records may remain until deleted or replaced by newer executions.</p>
+      <p>Clearing Canary's history does not delete Jira issues created during testing.</p>
+    </section>
+
+    <section>
+      <h2>4. Third-Party Services and Notifications</h2>
+      <p>Canary operates using Atlassian Forge and Jira Cloud.</p>
+      <p>The application does not intentionally transmit execution records to independent analytics or advertising services.</p>
+      <p>However, creating test issues may activate Jira Automation rules, notifications, webhooks or other integrations configured by the customer's organization.</p>
+      <p>Canary cannot prevent these external effects. Users should run tests in dedicated projects.</p>
+    </section>
+
+    <section>
+      <h2>5. Data Security</h2>
+      <p>Canary uses Atlassian Forge permissions and Jira authorization controls to restrict access and operations.</p>
+      <p>The application does not maintain a separate external database or authentication system.</p>
+      <p>Data processing and storage are subject to the applicable Atlassian Cloud infrastructure and security controls.</p>
+    </section>
+
+    <section>
+      <h2>6. Your Choices and Rights</h2>
+      <p>Users should contact their Jira organization administrator to manage permissions and Jira issues.</p>
+      <p>For questions about Canary's stored execution records, access requests or deletion requests, contact the developer using the address below.</p>
+      <p>Applicable data protection rights depend on your jurisdiction.</p>
+    </section>
+
+    <section>
+      <h2>7. Contact</h2>
+      <div class="contact-box">
+        <p><strong>Developer:</strong> Carlos Ferreiro</p>
+        <p><strong>Application:</strong> Canary</p>
+        <p><strong>Email:</strong> <a href="mailto:josecarlosvelosoferreiro@gmail.com">josecarlosvelosoferreiro@gmail.com</a></p>
+      </div>
+      <p style="margin-top: 1rem;">For information about Atlassian's processing of data, consult the <a href="https://www.atlassian.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Atlassian Privacy Policy</a>.</p>
+    </section>
+
+    <footer>
+      &copy; 2026 Carlos Ferreiro. Canary for Atlassian Jira Cloud.
+    </footer>
+  </main>
+</body>
+</html>
