@@ -185,7 +185,8 @@
     <section>
       <h2>3. Data Storage and Retention</h2>
       <p>Canary stores up to 50 recent test execution records using Atlassian Forge Key-Value Store (KVS).</p>
-      <p>Records may contain project identifiers, issue keys, configured labels, timestamps and execution metadata.</p>
+      <p>Records strictly contain project keys, synthetic issue keys, configured test labels, timestamps and execution duration metadata.</p>
+      <p><strong>No personal data stored:</strong> Canary does not store personally identifiable information (PII), individual user names, email addresses, IP addresses, or Atlassian account identifiers. All data resides within your Atlassian site environment with zero external egress.</p>
       <p>Authorized users can view records associated with projects they can access. Users with project administration permissions can clear the corresponding execution history.</p>
       <p>Stored records may remain until deleted or replaced by newer executions.</p>
       <p>Clearing Canary's history does not delete Jira issues created during testing.</p>
