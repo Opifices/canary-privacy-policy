@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canary — Documentation & User Guide</title>
+  <meta name="description" content="Official documentation and user guide for Canary: on-demand regression checks for Jira Automation.">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --primary: #0052cc;
+      --primary-hover: #0747a6;
+      --accent: #eef2ff;
+      --accent-border: #c7d2fe;
+      --pass: #00875a;
+      --fail: #de350b;
+      --overreach: #ff8b00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+      border: 1px solid var(--border);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-links {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      margin-right: 1.25rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e40af;
+      background: var(--accent);
+      border: 1px solid var(--accent-border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #091e42;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #091e42;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #172b4d;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: #f1f5f9;
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      color: #091e42;
+    }
+
+    .callout {
+      background: var(--accent);
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .verdict-tag {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      color: #ffffff;
+      margin-right: 0.4rem;
+    }
+    .tag-pass { background-color: var(--pass); }
+    .tag-fail { background-color: var(--fail); }
+    .tag-overreach { background-color: var(--overreach); }
+    .tag-other { background-color: #64748b; }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav class="nav-links">
+        <a href="index.html">← Privacy Policy</a>
+        <a href="#overview">Overview</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#verdicts">Verdicts</a>
+        <a href="#rovo-mcp">Rovo & MCP</a>
+        <a href="#support">Support</a>
+      </nav>
+      <span class="badge">Atlassian Forge Cloud App</span>
+      <h1>Canary User Guide & Documentation</h1>
+      <p class="subtitle">On-demand regression checks for Jira Automation: verify the outcome, not just the run.</p>
+    </header>
+
+    <section id="overview">
+      <h2>1. Overview</h2>
+      <p>Jira Automation audit logs tell you whether a rule triggered and ran. They cannot tell you whether the rule still produces the business outcome you expect after someone edits it.</p>
+      
+      <div class="callout">
+        <strong>Empirical finding:</strong> In our automated experiments, modifying a rule's action led Jira's audit log to report <code>SUCCESS</code>, even though the expected label was no longer added. Canary detected this silent regression immediately as <code>FAIL</code>.
+      </div>
+
+      <p>Canary is an on-demand regression check application built natively on Atlassian Forge. You select a target test project, the stimulus trigger label, and the expected output label, then click <strong>Run Canary check</strong>.</p>
+    </section>
+
+    <section id="how-it-works">
+      <h2>2. How It Works: Stimulus and Control</h2>
+      <p>Instead of creating random test tickets, Canary creates a simultaneous pair of issues in your Jira project:</p>
+      <ul>
+        <li><strong>Stimulus Issue:</strong> Carries your trigger label (e.g. <code>cny-test</code>), so your automation rule should evaluate its condition and act on it.</li>
+        <li><strong>Control Issue:</strong> Identical in all respects, but deliberately created without the trigger label, so your automation rule must leave it untouched.</li>
+      </ul>
+      <p>Canary monitors both issues over an exact <strong>25.0-second observation window</strong> using Jira's native issue changelogs and server timestamps, computing a deterministic verdict.</p>
+    </section>
+
+    <section id="verdicts">
+      <h2>3. Verdicts Explained</h2>
+      <ul>
+        <li><span class="verdict-tag tag-pass">PASS</span> <strong>The rule worked as intended.</strong> The stimulus issue received the expected label within 25 seconds, and the control issue remained completely clean for the entire observation window.</li>
+        <li><span class="verdict-tag tag-fail">FAIL</span> <strong>The expected outcome did not occur.</strong> The expected label was never added to the stimulus issue within 25 seconds (or was delayed beyond the SLA).</li>
+        <li><span class="verdict-tag tag-overreach">OVERREACH</span> <strong>Your rule is affecting unrelated work!</strong> The control issue also received the action label, indicating that the rule's condition is too loose.</li>
+        <li><span class="verdict-tag tag-other">INCONCLUSIVE</span> <strong>Transient read or permission issue.</strong> Canary could not read the full changelog or Jira API returned an error. A read error is never reported as FAIL.</li>
+        <li><span class="verdict-tag tag-other">INVALID</span> <strong>Contaminated initial state.</strong> The test inputs already carried the expected label at creation time.</li>
+      </ul>
+    </section>
+
+    <section id="prerequisites">
+      <h2>4. Setup & Best Practices</h2>
+      <ul>
+        <li><strong>Use a dedicated test project:</strong> Canary creates real, permanent Jira issues. Automation rules, webhooks, and notifications in that project can react to them.</li>
+        <li><strong>Supported project types:</strong> Software and Business (Jira Work Management) projects are fully supported. Jira Service Management (JSM) projects are excluded.</li>
+        <li><strong>Finding test issues:</strong> Search with JQL: <code>summary ~ "CANARY" AND summary ~ "TEST"</code>.</li>
+        <li><strong>Permissions:</strong> Checks run with user permissions (<code>asUser</code>). The user needs <code>Administer projects</code> and <code>Create issues</code> in the target project.</li>
+      </ul>
+    </section>
+
+    <section id="rovo-mcp">
+      <h2>5. Atlassian Rovo & MCP Integration (Preview)</h2>
+      <p>Canary exposes two tools through Atlassian Forge's <code>rovo:mcp</code> infrastructure:</p>
+      <ul>
+        <li><strong>Run Canary Check (<code>canary-run-check</code>):</strong> Creates a stimulus and control pair in a project previously configured from the Canary UI. Protected by an atomic KVS rate-limiting lock (maximum 1 check per project per minute).</li>
+        <li><strong>Get Canary Recent Results (<code>canary-get-recent-results</code>):</strong> Purely read-only tool that queries the latest evaluated verdicts for accessible Jira projects.</li>
+      </ul>
+    </section>
+
+    <section id="support">
+      <h2>6. Support & Contact</h2>
+      <p>Canary is maintained by <strong>Opifices</strong>. For feedback, questions, or assistance:</p>
+      <p><strong>Support Email:</strong> <a href="mailto:carloslab@proton.me">carloslab@proton.me</a></p>
+      <p><strong>Privacy Policy:</strong> <a href="index.html">View Privacy Policy</a></p>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 Opifices. All rights reserved.</span>
+      <span>Canary for Jira Cloud &bull; Built on Atlassian Forge</span>
+    </footer>
+  </div>
+</body>
+</html>
